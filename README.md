@@ -2,6 +2,8 @@
 
 手機優先的福岡 9 日家庭旅行行程網站，日期為 2026/08/11–08/19。
 
+GitHub Pages：<https://erickaoshoulin.github.io/fukuoka-family-trip-2026/>
+
 網站包含：
 
 - Day 1–9 每日行程卡與快速日期選擇
