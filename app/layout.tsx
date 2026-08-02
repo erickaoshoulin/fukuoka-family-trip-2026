@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fukuoka-family-trip-2026.kslin.chatgpt.site"),
   title: "FUKUOKA FAMILY GUIDE｜福岡 9 日家庭行程",
   description:
     "2026 年 8 月 11 日至 19 日的福岡家庭旅行行程，包含每日景點、JR 周遊券日、餐廳與 Google 地圖連結。",
