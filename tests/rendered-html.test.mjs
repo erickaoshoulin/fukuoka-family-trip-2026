@@ -34,6 +34,8 @@ test("server-renders the Fukuoka itinerary", async () => {
   assert.match(html, /JR PASS/);
   assert.match(html, /Google 地圖/);
   assert.match(html, /福岡麵包超人兒童博物館/);
+  assert.match(html, /博多華味鳥 博多駅筑紫口店/);
+  assert.match(html, /18:00 華味鳥/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
