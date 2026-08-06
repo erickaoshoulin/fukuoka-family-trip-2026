@@ -29,13 +29,17 @@ test("server-renders the Fukuoka itinerary", async () => {
 
   const html = await response.text();
   assert.match(html, /FUKUOKA FAMILY GUIDE/i);
-  assert.match(html, /一起去福岡/);
-  assert.match(html, /生命之旅・小倉・門司港/);
-  assert.match(html, /JR PASS/);
+  assert.match(html, /2026 福岡.*北九州.*豪斯登堡/);
+  assert.match(html, /北九州恐龍.*Outlet/);
+  assert.equal((html.match(/JR KYUSHU RAIL PASS · DAY/g) ?? []).length, 5);
+  assert.match(html, /8\/14[\s\S]{0,120}8\/18/);
   assert.match(html, /Google 地圖/);
   assert.match(html, /福岡麵包超人兒童博物館/);
-  assert.match(html, /博多華味鳥 博多駅筑紫口店/);
-  assert.match(html, /18:00 華味鳥/);
+  assert.match(html, /博多華味鳥.*博多站筑紫口/);
+  assert.match(html, /18:00/);
+  assert.match(html, /Day 3 時間衝突/);
+  assert.match(html, /報到與出發時間/);
+  assert.match(html, /Marine World/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
@@ -43,6 +47,6 @@ test("keeps booking-code information out of the public page", async () => {
   const response = await render();
   const html = await response.text();
 
-  assert.doesNotMatch(html, /F6XVYB/i);
-  assert.match(html, /公開頁面只保留航班時間，不放訂位代碼/);
+  assert.match(html, /公開頁面只保留航班資訊，不放訂位憑證/);
+  assert.doesNotMatch(html, /訂位代碼|訂位姓名|reservation code|booking code/i);
 });
